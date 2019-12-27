@@ -18,13 +18,13 @@ import (
 )
 
 func main() {
-	var coins float64 = 50
+	coins := 50.
 	fmt.Printf("%#v \nCoins left: %2.0f", distributeCoins([]string{"Matthew", "Sarah", "Augustus", "Heidi", "Emilie",
 		"Peter", "Giana", "Adriano", "Aaron", "Elizabeth"}, &coins), coins)
 }
 
 func distributeCoins(users []string, totalCoins *float64) map[string]float64 {
-	const maxCoinsPerUser float64 = 10
+	const maxCoinsPerUser = 10.
 	distribution := make(map[string]float64, len(users))
 	for _, userName := range users {
 		userCoins := math.Min(maxCoinsPerUser, getUserCoins(userName))
@@ -35,7 +35,7 @@ func distributeCoins(users []string, totalCoins *float64) map[string]float64 {
 }
 
 func getUserCoins(name string) float64 {
-	var total float64 = 0
+	total := 0.
 	vowelsDist := map[string]float64{"a": 1, "e": 1, "i": 2, "o": 3, "u": 4}
 
 	for _, v := range name {
